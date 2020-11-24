@@ -29,4 +29,11 @@ class MealName:
             return None
 
     def get_measure_to_prepare_meal(self, name):
-        return ""
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name)
+        measures = []
+        for i in range(1, 20, 1):
+            measure = "strMeasure" + str(i)
+            if meals.json()['meals'][0][measure] != 'null' and meals.json()['meals'][0][measure] != "" and meals.json()['meals'][0][measure] != None:
+                measures.append(meals.json()['meals'][0][measure])
+        return measures
+
