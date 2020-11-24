@@ -8,3 +8,5 @@ class MealName:
             return meal.json()['meals']
         else:
             raise TypeError('not type string')
+    def get_yt_link(self,name):
+        return ""
