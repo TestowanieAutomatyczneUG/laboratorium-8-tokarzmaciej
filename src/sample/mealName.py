@@ -27,3 +27,6 @@ class MealName:
             return ingredients
         else:
             return None
+
+    def get_measure_to_prepare_meal(self, name):
+        return ""

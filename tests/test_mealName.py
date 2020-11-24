@@ -23,13 +23,20 @@ class MealNameTest(unittest.TestCase):
     def test_meal_yt_link_typeError(self):
         self.assertRaisesRegex(TypeError, 'not type string', self.temp.get_yt_link, 1)
 
-    def test_get_ingredients_to_meal(self):
+    def test_ingredients_to_meal(self):
         ingredients = self.temp.get_ingredients_to_meal("Pancakes")
         self.assertEqual(ingredients, ['Flour', 'Eggs', 'Milk', 'Sunflower Oil', 'Sugar', 'Raspberries', 'Blueberries'])
 
-    def test_get_ingredients_to_meal_not_found_meal(self):
+    def test_ingredients_to_meal_not_found_meal(self):
         ingredients = self.temp.get_ingredients_to_meal("abcdefg")
         self.assertEqual(ingredients, None)
+
+    def test_measure_to_prepare_meal(self):
+        measures = self.temp.get_measure_to_prepare_meal("Arrabiata")
+        self.assertEqual(measures, ['1 pound', '1/4 cup', '3 cloves', '1 tin ', '1/2 teaspoon', '1/2 teaspoon', '6 leaves', 'spinkling'])
+
+
+
 
     def tearDown(self):
         self.temp = None
