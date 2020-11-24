@@ -15,3 +15,9 @@ class MealName:
             return link.json()['meals'][0]['strYoutube']
         else:
             raise TypeError('not type string')
+    def get_ingredients_to_meal(self,name):
+        return ""
+
+
+
+
