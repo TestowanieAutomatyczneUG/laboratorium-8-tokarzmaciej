@@ -33,10 +33,13 @@ class MealNameTest(unittest.TestCase):
 
     def test_measure_to_prepare_meal(self):
         measures = self.temp.get_measure_to_prepare_meal("Arrabiata")
-        self.assertEqual(measures, ['1 pound', '1/4 cup', '3 cloves', '1 tin ', '1/2 teaspoon', '1/2 teaspoon', '6 leaves', 'spinkling'])
+        self.assertEqual(measures,
+                         ['1 pound', '1/4 cup', '3 cloves', '1 tin ', '1/2 teaspoon', '1/2 teaspoon', '6 leaves',
+                          'spinkling'])
 
-
-
+    def test_measure_to_prepare_meal_not_found_meal(self):
+        measures = self.temp.get_measure_to_prepare_meal("abcdefgh")
+        self.assertEqual(measures, None)
 
     def tearDown(self):
         self.temp = None
