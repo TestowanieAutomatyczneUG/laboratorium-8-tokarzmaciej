@@ -15,7 +15,8 @@ class MealName:
             return link.json()['meals'][0]['strYoutube']
         else:
             raise TypeError('not type string')
-    def get_ingredients_to_meal(self,name):
+
+    def get_ingredients_to_meal(self, name):
         meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name)
         ingredients = []
         for i in range(1, 20, 1):
@@ -23,7 +24,3 @@ class MealName:
             if meals.json()['meals'][0][ingredient] != 'null' and meals.json()['meals'][0][ingredient] != "":
                 ingredients.append(meals.json()['meals'][0][ingredient])
         return ingredients
-
-
-
-
