@@ -18,7 +18,7 @@ class MealName:
 
     def get_ingredients_to_meal(self, name):
         meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name)
-        if meals.json()['meals'] != None:
+        if meals.json()['meals'] is not None:
             ingredients = []
             for i in range(1, 20, 1):
                 ingredient = "strIngredient" + str(i)
