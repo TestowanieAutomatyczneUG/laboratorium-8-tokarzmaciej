@@ -3,7 +3,7 @@ import unittest
 from src.sample.mealsStartFromFirstLetter import MealsFromFirstLetter
 
 
-class AreaMealsTest(unittest.TestCase):
+class MealsStartFromFirstLetterTest(unittest.TestCase):
 
     def setUp(self):
         self.temp = MealsFromFirstLetter()
