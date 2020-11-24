@@ -21,5 +21,3 @@ class MealCategoris:
                 return None
         else:
             raise TypeError("You_use_str_type")
-
-print(MealCategoris().get_meals_in_category("Seafood"))
