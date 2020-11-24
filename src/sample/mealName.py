@@ -33,7 +33,7 @@ class MealName:
         measures = []
         for i in range(1, 20, 1):
             measure = "strMeasure" + str(i)
-            if meals.json()['meals'][0][measure] != 'null' and meals.json()['meals'][0][measure] != "" and meals.json()['meals'][0][measure] != None:
+            if meals.json()['meals'][0][measure] != 'null' and meals.json()['meals'][0][measure] != "" and \
+                    meals.json()['meals'][0][measure] != None:
                 measures.append(meals.json()['meals'][0][measure])
         return measures
-
