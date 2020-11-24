@@ -10,5 +10,8 @@ class MealName:
             raise TypeError('not type string')
 
     def get_yt_link(self, name):
-        link = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name)
-        return link.json()['meals'][0]['strYoutube']
+        if type(name) == str:
+            link = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + name)
+            return link.json()['meals'][0]['strYoutube']
+        else:
+            raise TypeError('not type string')
