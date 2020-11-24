@@ -26,6 +26,11 @@ class MealNameTest(unittest.TestCase):
     def test_get_ingredients_to_meal(self):
         ingredients = self.temp.get_ingredients_to_meal("Pancakes")
         self.assertEqual(ingredients, ['Flour', 'Eggs', 'Milk', 'Sunflower Oil', 'Sugar', 'Raspberries', 'Blueberries'])
+
+    def test_get_ingredients_to_meal_not_found_meal(self):
+        ingredients = self.temp.get_ingredients_to_meal("abcdefg")
+        self.assertEqual(ingredients, None)
+
     def tearDown(self):
         self.temp = None
 
