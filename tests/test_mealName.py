@@ -20,6 +20,9 @@ class MealNameTest(unittest.TestCase):
         instruction = self.temp.get_yt_link("Fish")
         self.assertEqual(instruction, "https://www.youtube.com/watch?v=2sX4fCgg-UI")
 
+    def test_meal_yt_link_typeError(self):
+        self.assertRaisesRegex(TypeError, 'not type string', self.temp.get_yt_link, 1)
+
     def tearDown(self):
         self.temp = None
 
